@@ -1,8 +1,8 @@
 # Pinduoduo恶意代码样本和脱壳机
 
-听说PDD今天开始发律师函删帖否认了![PDDNB](https://user-images.githubusercontent.com/25000885/224233765-5195f16a-f41c-482f-a664-1cf72796651e.png)，那就放点新东西出来。
+听说PDD今天开始发律师函删帖抵赖了![PDDNB](https://user-images.githubusercontent.com/25000885/224233765-5195f16a-f41c-482f-a664-1cf72796651e.png)，那就放点新东西出来。
 
-拼多多的两个壳，manwe和nvwa之一的manwe脱壳脚本。适用于样本中.mw1文件。.nw0要用nvwa脱壳脚本，过会再放，manwe里面基本已经足够看了。
+拼多多的两个壳，manwe和nvwa脱壳脚本。适用于样本中.mw1 .nw0文件。.nw0要用nvwa脱壳脚本，.mw1用manwe脚本。
 
 ## 拼多多manwe一键脱壳脚本
 
@@ -28,12 +28,15 @@ public class ManweVmpLoader {
     }
 }
 ```
+## 拼多多nvwa一键脱壳脚本
+
+代码见`nvwa_unpacker`目录
 
 ## 提取出的恶意样本
 
 PDD的恶意代码以加壳后的文件形式组织，APK自带AliveBaseAbility，其他的都是远程下发，以下称为“样本”。因为有些样本是动态下发，不一定全，如果有这里没有的，欢迎Pull Request补充。
 
-样本在samples目录中，包含PDD APK自带的样本，以及其动态下发的样本。动态样本为3.2日之前从安装了PDD的手机里提取出，现在新版本可能被PDD删掉了，有兴趣的可以找下装了之前的版本的手机看下，顺便看下`app_mango`目录，里面是配置文件，有惊喜。
+样本在samples目录中，包含PDD APK自带的样本，以及其动态下发的样本。动态样本为3.2日之前从安装了PDD的手机里/data/data/com.xunmeng.pinduoduo/files/bot/, /data/data/com.xunmeng.pinduoduo/files/.components/提取出，现在新版本可能被PDD删掉了，有兴趣的可以找下装了之前的版本的手机看下，顺便看下`app_mango`目录，里面是配置文件，有惊喜。
 
 带符号的样本为PDD 6.2.0提取出(`samples/old_alive_base_ability_with_symbol/mw1.bin`)，新版本的APP携带的样本去掉了符号。
 
